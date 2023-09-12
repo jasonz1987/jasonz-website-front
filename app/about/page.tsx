@@ -40,7 +40,7 @@ async function getPage() {
   //   return res.json()
 }
 
-function covertDate(dateString) {
+function covertDate(dateString:string) {
   const dateObject = new Date(dateString);
 
   // 使用 date-fns 的 format 函数来格式化日期

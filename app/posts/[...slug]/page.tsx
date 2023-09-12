@@ -28,7 +28,7 @@ interface PostProps {
   };
 }
 
-async function getPost(slug) {
+async function getPost(slug:string) {
   // 使用 fetch 或其他方法从 API 获取文章数据
   const res = await axios.get("http://localhost:1337/api/posts/" + slug);
   console.log(res.status);
@@ -47,7 +47,7 @@ async function getPost(slug) {
   //   return res.json()
 }
 
-function covertDate(dateString) {
+function covertDate(dateString: string) {
   const dateObject = new Date(dateString);
 
   // 使用 date-fns 的 format 函数来格式化日期

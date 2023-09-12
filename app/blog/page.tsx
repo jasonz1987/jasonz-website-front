@@ -38,7 +38,7 @@ async function getPosts() {
     return [];
   }
 
-  function covertDate(dateString) {
+  function covertDate(dateString: string) {
     const dateObject = new Date(dateString);
 
     // 使用 date-fns 的 format 函数来格式化日期
@@ -56,7 +56,7 @@ export default async function Blog() {
 
       <Stack px={20}>
           {
-              posts.map((post)=>(
+              posts.map((post: any)=>(
                 <HStack key={post.id}>
                 <Text>{covertDate(post.attributes.createdAt)}</Text>
                 <Link as={NextLink} href={`/posts/${post.attributes.slug}`}>

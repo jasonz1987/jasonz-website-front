@@ -21,8 +21,13 @@ import {
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
 
+interface LinkProps {
+  url: string;
+  title: string;
+}
+
 interface Props {
-  children: React.ReactNode;
+  item: LinkProps;
 }
 
 const Links = [
@@ -41,7 +46,7 @@ const Links = [
 ];
 
 const NavLink = (props: Props) => {
-  const { children, url } = props;
+  const { item } = props;
 
   return (
     <Box
@@ -51,12 +56,12 @@ const NavLink = (props: Props) => {
       rounded={"md"}
       _hover={{
         textDecoration: 'underline',
-        bg: useColorModeValue("gray.200,gray.900"),
+        bg: useColorModeValue('gray.200','gray.900'),
       }}
-      href={url}
+      href={item.url}
     >
         <Text as="b" fontSize="xl">
-          {children}
+          {item.title}
         </Text>
     </Box>
   );
@@ -67,7 +72,7 @@ export default function Navbar() {
 
   return (
     <>
-      <Box bg={useColorModeValue("gray.100, darkColor")} px={4}>
+      <Box bg={useColorModeValue('gray.100', 'darkColor')} px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
             size={"md"}
@@ -91,9 +96,7 @@ export default function Navbar() {
               display={{ base: "none", md: "flex" }}
             >
               {Links.map((link) => (
-                <NavLink key={link.title} url={link.url}>
-                  {link.title}
-                </NavLink>
+                <NavLink key={link.title} item={link}></NavLink>
               ))}
             </HStack>
             {/* <Menu>
@@ -125,7 +128,7 @@ export default function Navbar() {
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
               {Links.map((link) => (
-                <NavLink key={link} url={link.url}>{link.title}</NavLink>
+                <NavLink key={link.url} item={link}></NavLink>
               ))}
             </Stack>
           </Box>
