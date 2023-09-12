@@ -25,3 +25,18 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+
+.article {
+  font-size: 1.1rem;
+  color:#dadada;
+}
+
+.article h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.article p {
+  margin: 2rem 0;
+}
