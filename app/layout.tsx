@@ -20,6 +20,19 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const getBdAnalyticsTag = () => {
+    return {
+      __html: `
+      var _hmt = _hmt || [];
+      (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?9df80c64395dc22f25b7879090db0805";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+      })();`,
+    }
+  }
+
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -31,6 +44,7 @@ export default function RootLayout({
             <Footer />
           </Container>
         </Providers>
+        <script dangerouslySetInnerHTML={getBdAnalyticsTag()}/>
       </body>
     </html>
   );
