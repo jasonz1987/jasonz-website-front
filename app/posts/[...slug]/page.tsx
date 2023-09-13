@@ -1,26 +1,22 @@
-import NextLink from "next/link";
-import axios from "axios";
+import {
+  Heading, HStack,
+
+
+
+
+
+
+
+
+
+
+
+  Stack, Text
+} from "@chakra-ui/react";
 import { format } from "date-fns";
 import { notFound } from "next/navigation";
+import api from "../../axios/api";
 
-import {
-  Box,
-  Flex,
-  Avatar,
-  HStack,
-  Text,
-  IconButton,
-  Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
-  Heading,
-  Link,
-  useColorModeValue,
-  Stack,
-} from "@chakra-ui/react";
 
 interface PostProps {
   params: {
@@ -30,7 +26,7 @@ interface PostProps {
 
 async function getPost(slug:string) {
   // 使用 fetch 或其他方法从 API 获取文章数据
-  const res = await axios.get("http://localhost:1337/api/posts/" + slug);
+  const res = await api.get("/posts/" + slug);
   console.log(res.status);
   console.log(res.data.data);
   if (res.status == 200) {

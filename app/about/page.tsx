@@ -1,30 +1,16 @@
-import NextLink from "next/link";
+import {
+  Heading,
+
+
+  Stack
+} from "@chakra-ui/react";
 import axios from "axios";
 import { format } from "date-fns";
-import { notFound } from "next/navigation";
 
-import {
-  Box,
-  Flex,
-  Avatar,
-  HStack,
-  Text,
-  IconButton,
-  Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
-  Heading,
-  Link,
-  useColorModeValue,
-  Stack,
-} from "@chakra-ui/react";
 
 async function getPage() {
   // 使用 fetch 或其他方法从 API 获取文章数据
-  const res = await axios.get("http://localhost:1337/api/about");
+  const res = await axios.get("/about");
 
   if (res.status == 200) {
     return res.data.data;
