@@ -4,30 +4,14 @@ import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import {
   Box,
   Flex,
-
   HStack,
-
   IconButton,
-
-
-
-
-
-
-
-
-
-  Stack, Text,
-
-
-
-
-
-
-
-
-  useColorModeValue, useDisclosure
+  Stack,
+  Text,
+  useColorModeValue,
+  useDisclosure,
 } from "@chakra-ui/react";
+
 
 interface LinkProps {
   url: string;
@@ -63,14 +47,14 @@ const NavLink = (props: Props) => {
       py={1}
       rounded={"md"}
       _hover={{
-        textDecoration: 'underline',
-        bg: useColorModeValue('gray.200','gray.900'),
+        textDecoration: "underline",
+        bg: useColorModeValue("gray.200", "gray.900"),
       }}
       href={item.url}
     >
-        <Text as="b" fontSize="xl">
-          {item.title}
-        </Text>
+      <Text as="b" fontSize="xl">
+        {item.title}
+      </Text>
     </Box>
   );
 };
@@ -80,7 +64,7 @@ export default function Navbar() {
 
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'darkColor')} px={4}>
+      <Box bg={useColorModeValue("gray.100", "darkColor")} px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
             size={"md"}
