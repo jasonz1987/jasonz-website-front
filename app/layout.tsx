@@ -5,7 +5,7 @@ import { Providers } from "./providers";
 import React from "react";
 import Navbar from "./navbar";
 import Footer from "./footer";
-import theme from './theme';
+import theme from "./theme";
 import { Container, Box, ColorModeScript } from "@chakra-ui/react";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -23,15 +23,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Providers>
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-        <Container maxW="6xl" >
-          <Navbar />
-          <Box minHeight="60vh" > 
-            {children}
-            </Box>
+        <Providers>
+          <Container maxW="6xl">
+            <Navbar />
+            <Box minHeight="60vh">{children}</Box>
             <Footer />
-         </Container>
+          </Container>
         </Providers>
       </body>
     </html>

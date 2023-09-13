@@ -8,10 +8,12 @@ import {
   IconButton,
   Stack,
   Text,
+  Link,
   useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
-
+import React from "react";
+import NextLink from "next/link";
 
 interface LinkProps {
   url: string;
@@ -75,9 +77,12 @@ export default function Navbar() {
           />
           <HStack spacing={8} alignItems={"center"}>
             <Box>
+            <Link as={NextLink} href='/'>
               <Text as="b" fontSize="xl">
                 张晓刚的个人网站
               </Text>
+            </Link>
+             
             </Box>
           </HStack>
           <Flex alignItems={"center"}>
