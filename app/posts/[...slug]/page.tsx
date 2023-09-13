@@ -1,21 +1,16 @@
-import {
-  Heading, HStack,
+"use client"
 
-
-
-
-
-
-
-
-
-
-
-  Stack, Text
-} from "@chakra-ui/react";
+import { Heading, HStack, Stack, Text } from "@chakra-ui/react";
 import { format } from "date-fns";
 import { notFound } from "next/navigation";
 import api from "../../axios/api";
+import Prism from 'prismjs';
+import { useEffect } from "react";
+
+require('prismjs/components/prism-javascript')
+require('prismjs/components/prism-css')
+require('prismjs/components/prism-jsx')
+
 
 
 interface PostProps {
@@ -24,7 +19,7 @@ interface PostProps {
   };
 }
 
-async function getPost(slug:string) {
+async function getPost(slug: string) {
   // 使用 fetch 或其他方法从 API 获取文章数据
   const res = await api.get("/posts/" + slug);
   console.log(res.status);
@@ -64,10 +59,14 @@ export default async function Blog({ params }: PostProps) {
     notFound();
   }
 
+  useEffect(() => {
+    Prism.highlightAll()
+  }, [])
+
   return (
     <article className="article">
       <Stack py={20} px={10}>
-        <Heading mb={10}>{post.attributes.title}</Heading>
+        <Heading mb={2}>{post.attributes.title}</Heading>
         <HStack>
           <Text>{covertDate(post.attributes.createdAt)}</Text>
         </HStack>
