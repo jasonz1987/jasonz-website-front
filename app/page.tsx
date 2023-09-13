@@ -1,26 +1,22 @@
 "use client";
 
-import Image from "next/image";
-import Navbar from "./navbar";
 import {
-  Box,
-  Container,
-  Heading,
-  Text,
-  Center,
-  Avatar,
-  VStack,
-  HStack,
-  Stack,
-  Icon,
-  Link
-} from "@chakra-ui/react";
+  Avatar, Box,
 
+
+
+
+
+
+  HStack,
+
+  Icon,
+  Link, Stack, Text
+} from "@chakra-ui/react";
 import {
-  AiFillGithub,
-  AiFillTwitterCircle,
-  AiFillWeiboCircle,
+  AiFillGithub
 } from "react-icons/ai";
+
 
 export default function Home() {
   return (

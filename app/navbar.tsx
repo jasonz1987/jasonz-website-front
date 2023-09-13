@@ -1,25 +1,33 @@
 "use client";
 
+import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import {
   Box,
   Flex,
-  Avatar,
+
   HStack,
-  Text,
+
   IconButton,
-  Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
-  useDisclosure,
-  useColorModeValue,
-  Link,
-  Stack,
+
+
+
+
+
+
+
+
+
+  Stack, Text,
+
+
+
+
+
+
+
+
+  useColorModeValue, useDisclosure
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-import NextLink from "next/link";
 
 interface LinkProps {
   url: string;

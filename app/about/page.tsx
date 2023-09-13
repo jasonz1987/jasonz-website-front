@@ -4,13 +4,13 @@ import {
 
   Stack
 } from "@chakra-ui/react";
-import axios from "axios";
 import { format } from "date-fns";
+import api from "../axios/api";
 
 
 async function getPage() {
   // 使用 fetch 或其他方法从 API 获取文章数据
-  const res = await axios.get("/about");
+  const res = await api.get("/about");
 
   if (res.status == 200) {
     return res.data.data;

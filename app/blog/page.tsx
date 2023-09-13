@@ -13,15 +13,15 @@ import {
 
   Stack, Text
 } from "@chakra-ui/react";
-import axios from 'axios';
 import { format } from 'date-fns';
 import NextLink from "next/link";
 import React from "react";
+import api from "../axios/api";
 
 async function getPosts() {
     // 使用 fetch 或其他方法从 API 获取文章数据
     try {
-      const res = await axios.get("/posts");
+      const res = await api.get("/posts");
       console.log(res.status);
       console.log(res.data.data);
       if (res.status == 200) {
