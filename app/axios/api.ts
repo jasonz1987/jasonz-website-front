@@ -1,9 +1,11 @@
 import axios from 'axios';
 
-const api = axios.create({
-  baseURL: 'https://backend.jason-z.com/api', // Replace with your API base URL
-});
 
+const API_URL = process.env.NEXT_PUBLIC_BASE_URL;
+
+const api = axios.create({
+  baseURL: API_URL , // Replace with your API base URL
+});
 
 // Request interceptor
 api.interceptors.request.use(

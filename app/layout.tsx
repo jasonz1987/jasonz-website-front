@@ -7,7 +7,7 @@ import Navbar from "./navbar";
 import Footer from "./footer";
 import theme from "./theme";
 import { Container, Box, ColorModeScript } from "@chakra-ui/react";
-import "prismjs/themes/prism-dark.css";
+import "prismjs/themes/prism-tomorrow.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
