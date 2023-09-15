@@ -53,22 +53,25 @@ function covertDate(dateString: string) {
 //   }))
 // }
 
+
+
 export default  function Post({ params }: PostProps) {
   const [post, setPost] = useState(null);
 
+  const updatePost = (data) => {
+    setPost(data);
+    setTimeout(()=>{
+      Prism.highlightAll();
+    }, 2000)
+  }
 
-
-  useEffect(async () => {
-    let data = await getPost(params.slug);
+  useEffect(() => {
+    let data = getPost(params.slug);
     if (!data) {
       notFound();
     }
 
-    setPost(data);
-   
-    setTimeout(()=>{
-      Prism.highlightAll();
-    }, 2000)
+    updatePost(data);
   }, [])
 
   return (
