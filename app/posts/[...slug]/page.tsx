@@ -1,6 +1,5 @@
 import { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
-import { Props } from "next/script";
 import api from "../../axios/api";
 import Article from "./article";
 
@@ -25,7 +24,7 @@ async function getPost(slug: string) {
 
 
 export async function generateMetadata(
-  { params, searchParams }: Props,
+  { params }: PostProps,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params
