@@ -5,6 +5,7 @@ import {
   Stack
 } from "@chakra-ui/react";
 import { format } from "date-fns";
+import { Metadata } from "next";
 import api from "../axios/api";
 
 
@@ -26,19 +27,9 @@ async function getPage() {
   return null;
 }
 
-function covertDate(dateString:string) {
-  const dateObject = new Date(dateString);
-
-  // 使用 date-fns 的 format 函数来格式化日期
-  const formattedDate = format(dateObject, "yyyy年MM月dd日");
-  return formattedDate;
-}
-
-// export async function generateStaticParams(): Promise<PostProps["params"][]> {
-//   return allPosts.map((post) => ({
-//     slug: post.slugAsParams.split("/"),
-//   }))
-// }
+export const metadata: Metadata = {
+  title: "关于 - 张晓刚",
+};
 
 export default async function Blog() {
   const page = await getPage();

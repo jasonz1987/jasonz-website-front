@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "张晓刚的个人网站",
-  description: "张晓刚的个人网站学习，记录，思考",
+  description: "张晓刚的个人网站，学习，记录，思考",
 };
 
 export default function RootLayout({

@@ -1,21 +1,8 @@
-"use client";
-
-import { Heading, HStack, Stack, Text, Icon } from "@chakra-ui/react";
-import { format } from "date-fns";
+import { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
+import { Props } from "next/script";
 import api from "../../axios/api";
-import Prism from 'prismjs';
-import { useEffect } from "react";
-import { useState } from "react";
-import {
-  AiFillCalendar,AiFillDatabase,AiFillTag
-} from "react-icons/ai";
-
-require('prismjs/components/prism-javascript')
-require('prismjs/components/prism-css')
-require('prismjs/components/prism-jsx')
-require('prismjs/components/prism-typescript')
-
+import Article from "./article";
 
 interface PostProps {
   params: {
@@ -35,70 +22,42 @@ async function getPost(slug: string) {
   return [];
 }
 
-function covertDate(dateString: string) {
-  if (dateString) {
-    const dateObject = new Date(dateString);
 
-    // 使用 date-fns 的 format 函数来格式化日期
-    const formattedDate = format(dateObject, "yyyy年MM月dd日");
-    return formattedDate;
+
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  // read route params
+  const slug = params.slug;
+
+  // fetch data
+  const res = await api.get("/posts/" + slug);
+
+  let post = null;
+
+  if (res?.status == 200) {
+    post = res.data.data;
   }
- 
-  return '';
+
+  return {
+    title: `${post?.attributes?.title}  - 张晓刚的个人网站`,
+  };
 }
 
-// export async function generateStaticParams(): Promise<PostProps["params"][]> {
-//   return allPosts.map((post) => ({
-//     slug: post.slugAsParams.split("/"),
-//   }))
-// }
+export default async function Post({params}: PostProps) {
+  const slug = params.slug;
+  const res = await api.get("/posts/" + slug);
 
+  let post = null;
 
-
-export default  function Post({ params }: PostProps) {
-  const [post, setPost] = useState(null);
-
-  const updatePost = (data) => {
-    setPost(data);
-    setTimeout(()=>{
-      Prism.highlightAll();
-    }, 2000)
+  if (res?.status == 200) {
+    post = res.data.data;
   }
 
-  useEffect(() => {
-    let data = getPost(params.slug);
-    if (!data) {
-      notFound();
-    }
+  if (!res.status) {
+    notFound();
+  }
 
-    updatePost(data);
-  }, [])
-
-  return (
-    <article className="article">
-      <Stack py={20} px={10}>
-        <Heading mb={2}>{post?.attributes?.title}</Heading>
-        <HStack gap={4}>
-          <HStack>
-            <Icon boxSize={6} as={AiFillCalendar} />
-            <Text>{covertDate(post?.attributes?.createdAt)}</Text>
-          </HStack>
-
-          {/* <HStack>
-            <Icon boxSize={6} as={AiFillDatabase} />
-            <Text>开发日志</Text>
-          </HStack>
-
-          <HStack>
-            <Icon boxSize={6} as={AiFillTag} />
-            <Text>标签</Text>
-          </HStack> */}
-         
-        </HStack>
-        <Stack>
-          <div dangerouslySetInnerHTML={{ __html: post?.attributes.content }} />
-        </Stack>
-      </Stack>
-    </article>
-  );
+  return <Article post={post} />
 }
