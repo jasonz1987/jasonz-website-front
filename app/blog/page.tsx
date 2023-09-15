@@ -1,7 +1,6 @@
 import { Heading, HStack, Link, Stack, Text } from "@chakra-ui/react";
 import { format } from "date-fns";
 import NextLink from "next/link";
-import React from "react";
 import api from "../axios/api";
 
 async function getPosts() {

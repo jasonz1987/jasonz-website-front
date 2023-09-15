@@ -12,7 +12,7 @@ import {
   useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
-import React from "react";
+
 import NextLink from "next/link";
 
 interface LinkProps {
