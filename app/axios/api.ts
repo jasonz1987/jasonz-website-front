@@ -1,10 +1,12 @@
 import axios from 'axios';
 
 
-const API_URL = process.env.NEXT_PUBLIC_BASE_URL;
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+
+console.log("BASE_URL", BASE_URL);
 
 const api = axios.create({
-  baseURL: API_URL , // Replace with your API base URL
+  baseURL: BASE_URL , // Replace with your API base URL
 });
 
 // Request interceptor
