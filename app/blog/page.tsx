@@ -35,15 +35,15 @@ export default async function Blog() {
   const posts = await getPosts();
 
   return (
-    <Stack py={20} px={10}>
+    <Stack py={20} px={10} >
       <Heading mb={10}>最新文章</Heading>
 
-      <Stack px={20}>
+      <Stack px={20} >
         {posts.map((post: any) => (
-          <HStack key={post.id}>
-            <Text>{covertDate(post.attributes.createdAt)}</Text>
-            <Link as={NextLink} href={`/posts/${post.attributes.slug}`}>
-              <Text as="b" fontSize="lg">
+          <HStack key={post.id} >
+            <Text flexShrink={0}>{covertDate(post.attributes.createdAt)}</Text>
+            <Link as={NextLink} href={`/posts/${post.attributes.slug}`} >
+              <Text as="b" fontSize="lg" textOverflow="ellipsis" whiteSpace="nowrap" >
                 {post.attributes.title}
               </Text>
             </Link>

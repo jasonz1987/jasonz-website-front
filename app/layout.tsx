@@ -7,13 +7,15 @@ import Navbar from "./navbar";
 import Footer from "./footer";
 import theme from "./theme";
 import { Container, Box, ColorModeScript } from "@chakra-ui/react";
-import "prismjs/themes/prism-tomorrow.css";
+// import "prismjs/themes/prism-tomorrow.css";
+
+import "./prismjs.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "张晓刚的个人网站",
-  description: "张晓刚的个人网站，学习，记录，思考",
+  title: process.env.NEXT_PUBLIC_SITE_NAME + ' - 学习，记录，思考',
+  description: "张晓刚的个人网站，主要用于记录和分享日常学习，生活，集合博客，作品，个人信息展示。",
 };
 
 export default function RootLayout({
@@ -36,10 +38,10 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body >
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <Providers>
-          <Container maxW="6xl">
+          <Container maxW="4xl">
             <Navbar />
             <Box minHeight="60vh">{children}</Box>
             <Footer />

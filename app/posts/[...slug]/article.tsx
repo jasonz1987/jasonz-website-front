@@ -6,10 +6,10 @@ import Prism from 'prismjs';
 import { useEffect } from 'react';
 import { AiFillCalendar } from 'react-icons/ai';
 
-require('prismjs/components/prism-javascript')
-require('prismjs/components/prism-css')
-require('prismjs/components/prism-jsx')
-require('prismjs/components/prism-typescript')
+import 'prismjs/components/prism-javascript'
+import 'prismjs/components/prism-css'
+import 'prismjs/components/prism-jsx'
+import 'prismjs/components/prism-typescript';
 
 interface ArticleProps  {
     post: any
@@ -40,7 +40,7 @@ export default function Article(props: ArticleProps) {
     return (
   
       <article className="article">
-        <Stack py={20} px={10}>
+        <Stack py={20} px={3}>
           <Heading mb={2}>{post?.attributes?.title}</Heading>
           <HStack gap={4}>
             <HStack>

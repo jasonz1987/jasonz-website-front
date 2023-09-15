@@ -4,15 +4,15 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 33,33,33;
+  --background-end-rgb: 33,33,33;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: 33,33,33;
+    --background-end-rgb: 33,33,33;
   }
 }
 
@@ -41,10 +41,61 @@ body {
   margin: 2rem 0;
 }
 
+.article a {
+  color: #42a5f5;
+  font-weight: bold;
+}
+
 .article blockquote {
-  padding-left: 2rem;
+  padding-left: 1.5rem;
   line-height: 2.2rem;
   font-weight: 400;
   font-style: italic;
-  border-left: 2px solid #424242;
+  border-left: 0.2rem solid #424242;
+  margin-left: 1.5rem;
+  color: #999999;
 }
+
+/* pre[class*="language-"],
+code[class*="language-"] {
+  -webkit-text-stroke-width: 0px;
+  background-color: rgb(30, 30, 30) !important;
+  background-image: url(https://ik.imagekit.io/garbagevalue/garbage/window-buttons_gt8xoXxWn.png)!important;
+  background-position: 16px 14px !important;
+  background-repeat: no-repeat !important;
+  background-size: 44px 10px !important;
+  border-radius: 12px;
+  box-sizing: border-box;
+  color: rgb(206, 145, 120);
+  direction: ltr;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-size: 13px;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-ligatures: normal;
+  font-weight: 400;
+  hyphens: none;
+  letter-spacing: normal;
+  line-height: 1.5;
+  margin: 1em 0px;
+  orphans: 2;
+  overflow: auto;
+  padding: 40px 2em 2em;
+  tab-size: 4;
+  text-align: left;
+  text-decoration-color: initial;
+  text-decoration-style: initial;
+  text-decoration-thickness: initial;
+  text-indent: 0px;
+  text-shadow: none;
+  text-transform: none;
+  white-space: pre;
+  widows: 2;
+  word-break: normal;
+  word-spacing: 0px;
+}
+
+pre {
+  padding: 2rem 0; 
+}  */
+
