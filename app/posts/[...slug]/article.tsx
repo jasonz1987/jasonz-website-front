@@ -10,6 +10,7 @@ import 'prismjs/components/prism-javascript'
 import 'prismjs/components/prism-css'
 import 'prismjs/components/prism-jsx'
 import 'prismjs/components/prism-typescript';
+import 'prismjs/components/prism-java';
 
 interface ArticleProps  {
     post: any
@@ -33,7 +34,10 @@ export default function Article(props: ArticleProps) {
   
     useEffect(() => {
      
-      Prism.highlightAll();
+      setTimeout(()=>{
+        Prism.highlightAll();
+
+      }, 100)
     
     }, [])
   

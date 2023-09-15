@@ -56,46 +56,19 @@ body {
   color: #999999;
 }
 
-/* pre[class*="language-"],
-code[class*="language-"] {
-  -webkit-text-stroke-width: 0px;
-  background-color: rgb(30, 30, 30) !important;
-  background-image: url(https://ik.imagekit.io/garbagevalue/garbage/window-buttons_gt8xoXxWn.png)!important;
-  background-position: 16px 14px !important;
-  background-repeat: no-repeat !important;
-  background-size: 44px 10px !important;
-  border-radius: 12px;
-  box-sizing: border-box;
-  color: rgb(206, 145, 120);
-  direction: ltr;
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-  font-size: 13px;
-  font-style: normal;
-  font-variant-caps: normal;
-  font-variant-ligatures: normal;
-  font-weight: 400;
-  hyphens: none;
-  letter-spacing: normal;
-  line-height: 1.5;
-  margin: 1em 0px;
-  orphans: 2;
+.article pre{
+  background-color: rgb(30, 30, 30);
+  padding: 16px;
+  border-radius: 4px;
   overflow: auto;
-  padding: 40px 2em 2em;
-  tab-size: 4;
-  text-align: left;
-  text-decoration-color: initial;
-  text-decoration-style: initial;
-  text-decoration-thickness: initial;
-  text-indent: 0px;
-  text-shadow: none;
-  text-transform: none;
-  white-space: pre;
-  widows: 2;
-  word-break: normal;
-  word-spacing: 0px;
+  font-size: 14px;
+  margin-bottom: 4.1rem;
+  padding: 3.7rem 0 1.6rem 1.4rem;
+  border-radius: 12px;
+  overflow: hidden;
+  background-image: url(https://ik.imagekit.io/garbagevalue/garbage/window-buttons_gt8xoXxWn.png);
+  background-repeat: no-repeat;
+  background-size: 44px 10px;
+  background-position: 16px 14px;
 }
-
-pre {
-  padding: 2rem 0; 
-}  */
 
