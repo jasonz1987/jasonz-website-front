@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.jason-z.com
+
+# Sitemaps
+Sitemap: https://www.jason-z.com/sitemap.xml
