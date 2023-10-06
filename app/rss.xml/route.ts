@@ -5,7 +5,7 @@ import { getPosts } from "../data/post.data";
 
 const SITE_URL = "https://www.jason-z.com";
 
-function truncateHTML(htmlString, maxLength) {
+function truncateHTML(htmlString: string, maxLength:number) {
     // 移除所有 HTML 标签
     const plainText = htmlString.replace(/<[^>]*>/g, '');
   
@@ -26,7 +26,7 @@ export async function GET() {
       language: "en",
     });
   
-    posts.forEach((post) => {
+    posts.forEach((post:any) => {
       feed.item({
         title: post.attributes.title,
         description: truncateHTML(post.attributes.content,100),
