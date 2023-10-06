@@ -1,17 +1,16 @@
 
-import NextLink from "next/link";
 import {
   Box,
-  Container,
-  Heading,
-  Text,
+
+
+
   Link,
-  Avatar,
-  VStack,
-  HStack,
-  Stack,
-  Icon,
+
+
+
+  Stack, Text
 } from "@chakra-ui/react";
+import NextLink from "next/link";
 
 export default function Footer() {
   return (

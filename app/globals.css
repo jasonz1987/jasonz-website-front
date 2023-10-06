@@ -58,7 +58,7 @@ body {
 
 .article pre{
   background-color: rgb(30, 30, 30);
-  padding: 16px;
+  padding: 3rem 1rem 1rem 1rem !important;
   border-radius: 4px;
   overflow: auto;
   font-size: 14px;
@@ -66,9 +66,9 @@ body {
   padding: 3.7rem 0 1.6rem 1.4rem;
   border-radius: 12px;
   overflow: hidden;
-  background-image: url(https://ik.imagekit.io/garbagevalue/garbage/window-buttons_gt8xoXxWn.png);
-  background-repeat: no-repeat;
-  background-size: 44px 10px;
-  background-position: 16px 14px;
+  background-image: url(https://ik.imagekit.io/garbagevalue/garbage/window-buttons_gt8xoXxWn.png) !important;
+  background-repeat: no-repeat !important;
+  background-size: 44px 10px !important;
+  background-position: 16px 14px !important;
 }
 
