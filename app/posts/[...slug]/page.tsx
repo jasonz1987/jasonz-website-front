@@ -1,3 +1,5 @@
+export const revalidate = 86400; 
+
 import { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 import api from "../../axios/api";
@@ -11,7 +13,7 @@ interface PostProps {
 
 async function getPost(slug: string) {
   // 使用 fetch 或其他方法从 API 获取文章数据
-  const res = await api.get("/posts/" + slug);
+  const res = await api.get("/posts/" + slug + "?populate=*");
   console.log(res.status);
   console.log(res.data.data);
   if (res.status == 200) {
@@ -28,7 +30,7 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params
-  const slug = params.slug;
+  const { slug } = await params;
 
   // fetch data
   const res = await api.get("/posts/" + slug);
@@ -40,12 +42,12 @@ export async function generateMetadata(
   }
 
   return {
-    title: `${post?.attributes?.title}  - 张晓刚的个人网站`,
+    title: `${post?.title}  - 张晓刚的个人网站`,
   };
 }
 
 export default async function Post({params}: PostProps) {
-  const slug = params.slug;
+  const { slug } = await params;
   const res = await api.get("/posts/" + slug);
 
   let post = null;

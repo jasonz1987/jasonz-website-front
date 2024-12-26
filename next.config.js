@@ -1,18 +1,26 @@
 /** @type {import('next').NextConfig} */
 
-
-
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL
-
 const nextConfig = {
-     async rewrites() {
-		return [
-			{
-				source: '/api/:path*',
-				destination: `${API_URL}/:path*`,
-			},
-		]
+    async rewrites() {
+        return [
+            // {
+            //     source: '/api/:path*',
+            //     destination: 'https://backend.jason-z.com/api/:path*',
+            //     basePath: false
+            // },
+        ]
+    },
+    async headers() {
+        return [
+            {
+                source: '/api/:path*',
+                headers: [
+                    { key: 'Access-Control-Allow-Origin', value: '*' },
+                    { key: 'Access-Control-Allow-Methods', value: 'GET,POST,PUT,DELETE,OPTIONS' },
+                    { key: 'Access-Control-Allow-Headers', value: 'Content-Type' },
+                ],
+            },
+        ]
     },
 }
 

@@ -37,11 +37,11 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body >
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <Providers>
-          <Container maxW="4xl">
+          <Container maxW="6xl">
             <Navbar />
             <Box minHeight="60vh">{children}</Box>
             <Footer />
